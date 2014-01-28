@@ -7,7 +7,7 @@ var RefreshTokenModel   = require('./libs/mongoose').RefreshTokenModel;
 var faker               = require('Faker');
 
 UserModel.remove({}, function(err) {
-    var user = new UserModel({ username: "andrey", password: "simplepassword" });
+    var user = new UserModel({ username: "chetvera", password: "rtyuehby" });
     user.save(function(err, user) {
         if(err) return log.error(err);
         else log.info("New user - %s:%s",user.username,user.password);
@@ -23,7 +23,7 @@ UserModel.remove({}, function(err) {
 });
 
 ClientModel.remove({}, function(err) {
-    var client = new ClientModel({ name: "OurService iOS client v1", clientId: "mobileV1", clientSecret:"abc123456" });
+    var client = new ClientModel({ name: "OurInternalService", clientId: "internal", clientSecret:"internal123456" });
     client.save(function(err, client) {
         if(err) return log.error(err);
         else log.info("New client - %s:%s",client.clientId,client.clientSecret);

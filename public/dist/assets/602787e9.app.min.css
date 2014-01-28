@@ -1,0 +1,1 @@
+html,body{margin:20px}@keyframes domChanged{from{background:#ff0}}@-webkit-keyframes domChanged{from{background:#ff0}}.ember-view{animation:domChanged 1s;-webkit-animation:domChanged 1s}

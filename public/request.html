@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="x.png">
+
+  <title>НПЦ Полимедсервис - Заявка на сервис</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Wrap all page content here -->
+<div id="wrap">
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">НПЦ Полимедсервис</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="map.html">Контакты</a></li>
+          <li class="active"><a href="#">Заявка на сервис</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <!-- Begin page content -->
+  <div class="container">
+    <div class="page-header">
+      <h1>Заявка на сервисное обслуживание</h1>
+    </div>
+    <p class="lead">Пожалуйста заполните все поля. Если обслуживания требуют несколько приборов, сделайте отдельную заявку на каждый.</p>
+    <form class="form-horizontal" role="form" method="post" action="service_request">
+      <div class="form-group">
+        <label for="hospital" class="col-sm-2 control-label">Лечебное учреждение</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="hospital" placeholder="Больница им.Кащенко" name="hospital" required autofocus>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="person" class="col-sm-2 control-label">Контактное лицо</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="person" placeholder="Борменталь И.А." name="person"required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="telephone" class="col-sm-2 control-label">Контактный телефон</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="telephone" placeholder="+7 934 1234567" name="telephone"required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="analyzer" class="col-sm-2 control-label">Прибор</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="analyzer" placeholder="Micros 60 OT" name="analyzer" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="place" class="col-sm-2 control-label">Его местонахождение</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="place" placeholder="хирургический корпус 3 этаж" name="place" required>
+          <span class="help-block">В какой лаборатории, отделении, корпусе и т.п. находится прибор.</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="defect" class="col-sm-2 control-label">Неисправность</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" rows="3" id="defect" placeholder="Не считает лейкоциты. Промывка не помогает" name="defect" required></textarea>
+          <span class="help-block">Подробно опишите как проявляется неисправность</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-info">Отправить заявку</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">©НПЦ Полимедсервис, 2014</p>
+  </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

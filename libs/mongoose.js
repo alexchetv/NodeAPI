@@ -2,9 +2,11 @@ var mongoose    = require('mongoose');
 var log         = require('./log')(module);
 var config      = require('./config');
 var crypto      = require('crypto');
+var autoIncrement = require('mongoose-auto-increment');
 
 mongoose.connect(config.get('mongoose:uri'));
 var db = mongoose.connection;
+autoIncrement.initialize(db);
 
 db.on('error', function (err) {
     log.error('connection error:', err.message);
@@ -14,6 +16,28 @@ db.once('open', function callback () {
 });
 
 var Schema = mongoose.Schema;
+
+//Request********************************************************************************
+
+var Request = new Schema({
+  hospital: { type: String, required: true },
+  person: { type: String, required: true },
+  telephone: { type: String, required: true },
+  analyzer: { type: String, required: true },
+  place: { type: String, required: true },
+  defect: { type: String, required: true },
+  created: { type: Date, default: Date.now }
+
+});
+
+Request.plugin(autoIncrement.plugin, {
+  model: 'Request',
+  field: 'requestId',
+  startAt: 1001
+});
+
+var RequestModel = mongoose.model('Request', Request);
+
 
 // Article
 
@@ -159,6 +183,7 @@ var RefreshTokenModel = mongoose.model('RefreshToken', RefreshToken);
 
 module.exports.mongoose = mongoose;
 module.exports.ArticleModel = ArticleModel;
+module.exports.RequestModel = RequestModel;
 module.exports.UserModel = UserModel;
 module.exports.ClientModel = ClientModel;
 module.exports.AccessTokenModel = AccessTokenModel;

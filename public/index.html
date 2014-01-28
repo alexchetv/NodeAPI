@@ -1,13 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>API index</title>
-</head>
-<body>
-<section>
-    <h1>This is example html</h1>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="x.png">
 
-</section>
+  <title>НПЦ Полимедсервис</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-success">
+      <div class="modal-body">
+        <div class="clearfix"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div>
+        <div id="successText"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-error">
+      <div class="modal-body">
+        <div class="clearfix"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></div>
+        Произошла ошибка! Попробуйте отправить заявку еще раз или передать ее по телефону.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Wrap all page content here -->
+<div id="wrap">
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/index.html">НПЦ Полимедсервис</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/index.html">Главная</a></li>
+          <li><a href="map.html">Контакты</a></li>
+          <li><a href="request.html">Заявка на сервис</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <!-- Begin page content -->
+  <div class="container">
+    <div class="page-header">
+      <h1>ООО НПЦ Полимедсервис</h1>
+    </div>
+    <p class="lead">Поставка медицинского лабораторного оборудования, реагентов и расходных материалов.</p>
+    <p class="lead">Установка и сервисное обслуживание лабораторных приборов.</p>
+  </div>
+</div>
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">©НПЦ Полимедсервис, 2014</p>
+  </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script>
+  var r=document.location.hash.substr(1);
+  if (r) {
+    if (r=='e')
+      $('#errorModal').modal();
+    else
+      {
+      $("#successText").html("Ваша заявка получена и сохранена под номером <b>"+r+"</b>. Мы свяжемся с вами в ближайшее время.");
+      $('#successModal').modal();
+      }
+    $('.modal').on('hidden.bs.modal', function (e) {
+      if ("pushState" in history)
+        history.pushState("", document.title, document.location.pathname + document.location.search);
+      else
+        document.location.hash = "";
+    })
+  }
+</script>
 </body>
 </html>
