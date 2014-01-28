@@ -10,6 +10,7 @@
     "dependencies" : {
         "express"       : "3.3.x",
         "mongoose"      : "3.6.x",
+        "mongoose-auto-increment"      : "2.1.x",
         "nconf"         : "0.6.x",
         "winston"       : "0.7.x",
         "Faker"         : "0.5.x",
@@ -17,7 +18,9 @@
         "passport"      : "0.1.x",
         "passport-http" : "0.2.x",
         "passport-http-bearer": "1.0.x",
-        "passport-oauth2-client-password": "0.1.x"
+        "passport-oauth2-client-password": "0.1.x",
+        "nodemailer"      : "0.6.x"
+
     },
     "license": "MIT"
 }
